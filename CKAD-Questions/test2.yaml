@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod-b
+  name: pod-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: pod-b
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: pod-b
+    spec:
+      containers:
+      - image: kubegoldenguide/alpine-spin:1.0.0 
+        name: pod-b
+        resources: {}
+status: {}
